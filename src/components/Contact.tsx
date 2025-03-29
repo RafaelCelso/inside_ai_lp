@@ -197,10 +197,10 @@ const Contact = () => {
 
                 <div className="bg-white p-4 rounded-2xl inline-block mb-8 w-full max-w-[200px] mx-auto">
                   <Image
-                    src="/path-to-your-image.jpg"
-                    alt="Descrição da imagem"
-                    width={500}
-                    height={300}
+                    src="/images/qr-code.jpg"
+                    alt="WhatsApp QR Code"
+                    width={200}
+                    height={200}
                     className="w-full h-auto"
                   />
                 </div>

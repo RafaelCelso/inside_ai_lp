@@ -69,8 +69,8 @@ const TestimonialCard = ({
           <Image
             src={testimonial.image}
             alt={testimonial.name}
-            width={500}
-            height={300}
+            width={56}
+            height={56}
             className="w-14 h-14 rounded-full object-cover border-2 relative z-10"
             style={{ borderColor: "#8b5cf6" }}
           />
