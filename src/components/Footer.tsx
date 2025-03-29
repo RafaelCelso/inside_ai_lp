@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { FiZap } from "react-icons/fi";
 
 const Footer = () => {

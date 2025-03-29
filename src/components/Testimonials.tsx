@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FiStar } from "react-icons/fi";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -65,9 +66,11 @@ const TestimonialCard = ({
               filter: "blur(8px)",
             }}
           />
-          <img
+          <Image
             src={testimonial.image}
             alt={testimonial.name}
+            width={500}
+            height={300}
             className="w-14 h-14 rounded-full object-cover border-2 relative z-10"
             style={{ borderColor: "#8b5cf6" }}
           />

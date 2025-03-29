@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiUser, FiCheckCircle, FiLoader } from "react-icons/fi";
+import Image from "next/image";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -195,9 +196,11 @@ const Contact = () => {
                 </p>
 
                 <div className="bg-white p-4 rounded-2xl inline-block mb-8 w-full max-w-[200px] mx-auto">
-                  <img
-                    src="/images/qr-code.jpg"
-                    alt="WhatsApp QR Code"
+                  <Image
+                    src="/path-to-your-image.jpg"
+                    alt="Descrição da imagem"
+                    width={500}
+                    height={300}
                     className="w-full h-auto"
                   />
                 </div>

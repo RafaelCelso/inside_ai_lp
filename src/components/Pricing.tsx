@@ -54,13 +54,6 @@ const plans = [
   },
 ];
 
-// Cores para os gradientes dos cards
-const cardGradients = [
-  "linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%)",
-  "linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%)",
-  "linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%)",
-];
-
 const PricingCard = ({
   plan,
   index,
