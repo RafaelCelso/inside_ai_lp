@@ -197,12 +197,13 @@ const Navbar = () => {
           >
             <button
               onClick={toggleMenu}
-              className="text-foreground p-2 rounded-md focus:outline-none"
+              className="text-foreground/90 hover:text-foreground p-2 rounded-md focus:outline-none bg-card/80"
               style={{
-                color: "#f8f9fa",
+                color: "rgba(248, 249, 250, 0.9)",
                 padding: "0.5rem",
                 borderRadius: "0.375rem",
                 outline: "none",
+                backgroundColor: "rgba(26, 29, 37, 0.8)",
               }}
             >
               {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -234,6 +235,7 @@ const Navbar = () => {
         >
           <Link
             href="#features"
+            onClick={() => setIsOpen(false)}
             className="block px-3 py-2 rounded-md text-foreground/80 hover:text-primary hover:bg-background/50"
             style={{
               display: "block",
@@ -250,6 +252,7 @@ const Navbar = () => {
           </Link>
           <Link
             href="#benefits"
+            onClick={() => setIsOpen(false)}
             className="block px-3 py-2 rounded-md text-foreground/80 hover:text-primary hover:bg-background/50"
             style={{
               display: "block",
@@ -266,6 +269,7 @@ const Navbar = () => {
           </Link>
           <Link
             href="#testimonials"
+            onClick={() => setIsOpen(false)}
             className="block px-3 py-2 rounded-md text-foreground/80 hover:text-primary hover:bg-background/50"
             style={{
               display: "block",
@@ -282,6 +286,7 @@ const Navbar = () => {
           </Link>
           <Link
             href="#pricing"
+            onClick={() => setIsOpen(false)}
             className="block px-3 py-2 rounded-md text-foreground/80 hover:text-primary hover:bg-background/50"
             style={{
               display: "block",
@@ -298,6 +303,7 @@ const Navbar = () => {
           </Link>
           <Link
             href="#contact"
+            onClick={() => setIsOpen(false)}
             className="block px-3 py-2 rounded-md bg-primary text-white font-medium hover:bg-primary-light"
             style={{
               display: "block",
