@@ -8,7 +8,7 @@ const testimonials = [
   {
     name: "Ana Silva",
     role: "Gerente de Atendimento, TechSupport",
-    image: "https://randomuser.me/api/portraits/women/1.jpg",
+    image: "/images/Ana Silva.png",
     content:
       "O Inside AI revolucionou nosso atendimento ao cliente. Nosso chatbot responde dúvidas 24/7 consultando nossa base de conhecimento, reduzindo em 70% o tempo de resposta e melhorando a satisfação dos clientes.",
     stars: 5,
@@ -16,7 +16,7 @@ const testimonials = [
   {
     name: "Carlos Mendes",
     role: "Diretor de RH, EduTech",
-    image: "https://randomuser.me/api/portraits/men/2.jpg",
+    image: "/images/Carlos Mendes.png",
     content:
       "Centralizamos todos os documentos da empresa na plataforma. Agora, nossa equipe tem acesso rápido a políticas, procedimentos e treinamentos através do chat. A integração com WhatsApp facilitou muito a comunicação interna.",
     stars: 5,
@@ -24,7 +24,7 @@ const testimonials = [
   {
     name: "Juliana Costa",
     role: "Coordenadora de Suporte, FinanceApp",
-    image: "https://randomuser.me/api/portraits/women/3.jpg",
+    image: "/images/Juliana Costa.png",
     content:
       "Nossa documentação técnica é extensa e estava difícil manter a equipe atualizada. Com o Inside AI, nossos agentes de suporte conseguem respostas precisas instantaneamente, melhorando muito a qualidade do atendimento.",
     stars: 5,
@@ -61,17 +61,17 @@ const TestimonialCard = ({
             className="absolute inset-0 rounded-full"
             style={{
               background: "linear-gradient(to right, #8b5cf6, #3b82f6)",
-              transform: "scale(1.1)",
+              transform: "scale(1.15)",
               opacity: 0.3,
-              filter: "blur(8px)",
+              filter: "blur(10px)",
             }}
           />
           <Image
             src={testimonial.image}
             alt={testimonial.name}
-            width={56}
-            height={56}
-            className="w-14 h-14 rounded-full object-cover border-2 relative z-10"
+            width={80}
+            height={80}
+            className="w-20 h-20 rounded-full object-cover border-2 relative z-10"
             style={{ borderColor: "#8b5cf6" }}
           />
         </div>
