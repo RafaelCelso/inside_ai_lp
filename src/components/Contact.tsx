@@ -20,7 +20,7 @@ const Contact = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:5678/webhook/54dd7d67-3a94-408b-9ac2-a94c0b19db31",
+        "https://automacao-n8n.jqnbbt.easypanel.host/webhook/54dd7d67-3a94-408b-9ac2-a94c0b19db31",
         {
           method: "POST",
           headers: {
