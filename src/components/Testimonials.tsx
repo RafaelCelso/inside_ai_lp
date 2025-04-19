@@ -109,7 +109,7 @@ const Testimonials = () => {
     <section
       id="testimonials"
       className="section"
-      style={{ paddingTop: "3rem", marginTop: "-2rem" }}
+      style={{ paddingTop: "3rem", marginTop: "-2rem", paddingBottom: "2rem" }}
     >
       {/* Elementos decorativos de fundo */}
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-background to-transparent -z-10" />
@@ -141,7 +141,7 @@ const Testimonials = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24">
           {testimonials.map((testimonial, index) => (
             <TestimonialCard
               key={index}

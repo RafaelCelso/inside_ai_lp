@@ -257,10 +257,10 @@ const Pricing = () => {
     <section
       id="pricing"
       className="section min-h-screen flex flex-col justify-center"
-      style={{ backgroundColor: "#0f1117" }}
+      style={{ backgroundColor: "#0f1117", paddingBottom: "2rem" }}
     >
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-28">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -282,21 +282,13 @@ const Pricing = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
           {plans.map((plan, index) => (
             <div key={index} className="w-full flex items-stretch">
               <PricingCard plan={plan} index={index} />
             </div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="mt-20 text-center"
-        ></motion.div>
       </div>
     </section>
   );

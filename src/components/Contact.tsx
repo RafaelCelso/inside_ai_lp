@@ -1,186 +1,21 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { FiCheckCircle, FiLoader } from "react-icons/fi";
 import Image from "next/image";
-import Link from "next/link";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    nome: "",
-    telefone: "",
-    email: "",
-  });
-  const [showFeedback, setShowFeedback] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-
-    try {
-      const response = await fetch(
-        "https://automacao-n8n.jqnbbt.easypanel.host/webhook/54dd7d67-3a94-408b-9ac2-a94c0b19db31",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
-
-      if (response.ok) {
-        setShowFeedback(true);
-        setFormData({ nome: "", telefone: "", email: "" });
-      } else {
-        console.error("Erro ao enviar solicitação");
-      }
-    } catch (error) {
-      console.error("Erro:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  if (showFeedback) {
-    return (
-      <section id="contact" className="section bg-background">
-        <div className="pt-96">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="card w-full max-w-md mx-auto relative text-center py-12"
-            >
-              <FiCheckCircle className="w-16 h-16 mx-auto mb-6 text-green-500" />
-              <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-white to-white/80 text-transparent bg-clip-text">
-                Obrigado pelo seu interesse!
-              </h2>
-              <p className="text-muted text-lg mb-2">
-                Recebemos sua solicitação com sucesso.
-              </p>
-              <p className="text-muted">
-                Entraremos em contato em até 24 horas para dar continuidade ao
-                seu acesso.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   return (
     <section id="contact" className="section bg-background">
       <div className="pt-96">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mt-96">
-            {/* Formulário de Solicitação */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="card w-full max-w-md mx-auto relative"
-            >
-              {/* Efeito de brilho */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl opacity-10 blur-xl group-hover:opacity-20 transition duration-1000"></div>
-
-              <div className="w-full relative">
-                <h2 className="text-2xl font-bold mb-2 bg-gradient-to-r from-white to-white/80 text-transparent bg-clip-text">
-                  Solicite contato
-                </h2>
-                <p className="text-muted mb-8 text-sm">
-                  Preencha seus dados que entraremos em contato
-                </p>
-
-                <form className="contact-form" onSubmit={handleSubmit}>
-                  <div>
-                    <label>Nome completo</label>
-                    <input
-                      type="text"
-                      name="nome"
-                      placeholder="Seu nome completo"
-                      value={formData.nome}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label>Telefone</label>
-                    <input
-                      type="tel"
-                      name="telefone"
-                      placeholder="Seu telefone com DDD"
-                      value={formData.telefone}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label>Email</label>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Seu melhor email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isLoading}
-                    className={isLoading ? "opacity-70 cursor-not-allowed" : ""}
-                    onClick={() =>
-                      (window.location.href = "https://inside-ai.com.br/login")
-                    }
-                  >
-                    {isLoading ? (
-                      <>
-                        <FiLoader
-                          size={20}
-                          className="animate-spin opacity-70"
-                        />
-                        <span>Enviando...</span>
-                      </>
-                    ) : (
-                      <>Solicitar contato</>
-                    )}
-                  </button>
-                </form>
-
-                <p className="text-center mt-6">
-                  <Link
-                    href="https://inside-ai.com.br/login"
-                    className="text-primary hover:text-primary-light transition-colors duration-200"
-                  >
-                    Já tenho uma conta
-                  </Link>
-                </p>
-              </div>
-            </motion.div>
-
+          <div className="flex justify-center mt-96">
             {/* QR Code e WhatsApp */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="card w-full relative text-center"
+              className="card w-full max-w-md relative text-center"
             >
               {/* Efeito de brilho */}
               <div className="absolute -inset-0.5 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl opacity-10 blur-xl group-hover:opacity-20 transition duration-1000"></div>
