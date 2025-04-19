@@ -107,7 +107,7 @@ const Demo = () => {
                   left: 0,
                   width: "100%",
                   height: "100%",
-                  objectFit: "fill",
+                  objectFit: "cover",
                   backgroundColor: "#1a1d25",
                   borderRadius: "8px",
                 }}
@@ -116,7 +116,7 @@ const Demo = () => {
                   src={
                     isMobile
                       ? "/media/Inside Ai - Vídeo De Uso Mobile.webm"
-                      : "/media/Inside AI - Vídeo De Uso.webm"
+                      : "/media/Inside Ai - Vídeo De Uso.webm"
                   }
                   type="video/webm"
                 />
