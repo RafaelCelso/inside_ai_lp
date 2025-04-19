@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FiUser, FiCheckCircle, FiLoader } from "react-icons/fi";
+import { FiCheckCircle, FiLoader } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -158,9 +158,7 @@ const Contact = () => {
                         <span>Enviando...</span>
                       </>
                     ) : (
-                      <>
-                        Solicitar contato
-                      </>
+                      <>Solicitar contato</>
                     )}
                   </button>
                 </form>

@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiArrowRight, FiPlay, FiUser } from "react-icons/fi";
-import Link from "next/link";
 
 // Cores para os avatares
 const avatarColors = [
