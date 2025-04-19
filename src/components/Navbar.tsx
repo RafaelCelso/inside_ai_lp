@@ -170,7 +170,7 @@ const Navbar = () => {
               Preços
             </Link>
             <Link
-              href="#contact"
+              href="https://inside-ai.com.br/login"
               className="btn-primary"
               style={{
                 display: "inline-flex",
@@ -185,7 +185,7 @@ const Navbar = () => {
                 textDecoration: "none",
               }}
             >
-              Solicitar acesso
+              Começar agora
             </Link>
           </div>
 
@@ -302,23 +302,20 @@ const Navbar = () => {
             Preços
           </Link>
           <Link
-            href="#contact"
+            href="https://inside-ai.com.br/login"
             onClick={() => setIsOpen(false)}
-            className="block px-3 py-2 rounded-md bg-primary text-white font-medium hover:bg-primary-light"
+            className="block px-3 py-2 rounded-md text-white bg-primary hover:bg-primary-light text-center"
             style={{
               display: "block",
-              paddingLeft: "0.75rem",
-              paddingRight: "0.75rem",
-              paddingTop: "0.5rem",
-              paddingBottom: "0.5rem",
+              padding: "0.75rem",
               borderRadius: "0.375rem",
               backgroundColor: "#6d28d9",
               color: "white",
-              fontWeight: "500",
               textDecoration: "none",
+              marginTop: "0.5rem",
             }}
           >
-            Solicitar acesso
+            Começar agora
           </Link>
         </div>
       </motion.div>

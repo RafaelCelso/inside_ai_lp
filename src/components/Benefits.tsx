@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiCheck, FiArrowRight } from "react-icons/fi";
+import Link from "next/link";
 
 // Cores para os ícones de benefícios
 const benefitColors = [
@@ -16,10 +17,10 @@ const benefitColors = [
 
 const benefits = [
   "Respostas instantâneas baseadas em seus documentos",
-  "Atendimento automatizado 24/7 via WhatsApp",
-  "Redução de custos com suporte ao cliente",
+  "Resumo de documentos em poucos segundos",
+  "Redução de custos com economia de tempo",
   "Consistência nas respostas para toda a equipe",
-  "Chatbot treinado com seu próprio conteúdo",
+  "IA treinada com seu próprio conteúdo",
   "Atualização fácil da base de conhecimento",
 ];
 
@@ -121,7 +122,7 @@ const Benefits = () => {
               viewport={{ once: true }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
             >
-              Automatize seu <span className="gradient-text">Atendimento</span>
+              Velocidade de <span className="gradient-text">Informação</span>
             </motion.h2>
 
             <motion.p
@@ -132,8 +133,7 @@ const Benefits = () => {
               className="text-lg text-muted mb-10"
             >
               Transforme seus documentos em uma fonte de conhecimento acessível
-              e crie chatbots inteligentes que respondem dúvidas dos seus
-              clientes 24 horas por dia, inclusive via WhatsApp.
+              e busque informações de forma rápida e eficiente.
             </motion.p>
 
             <div className="space-y-8">
@@ -167,8 +167,11 @@ const Benefits = () => {
               viewport={{ once: true }}
               className="mt-12"
             >
-              <a href="#contact" className="btn btn-primary">
-                Solicitar acesso
+              <a
+                href="https://inside-ai.com.br/login"
+                className="btn btn-primary"
+              >
+                Começar agora
                 <FiArrowRight className="ml-2" size={18} />
               </a>
             </motion.div>

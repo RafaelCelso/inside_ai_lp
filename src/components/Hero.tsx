@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiArrowRight, FiPlay, FiUser } from "react-icons/fi";
+import Link from "next/link";
 
 // Cores para os avatares
 const avatarColors = [
@@ -95,7 +96,7 @@ const Hero = () => {
               }}
             >
               <motion.a
-                href="#contact"
+                href="https://inside-ai.com.br/login"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-primary flex items-center justify-center gap-2"
@@ -113,7 +114,7 @@ const Hero = () => {
                   gap: "0.5rem",
                 }}
               >
-                Solicitar acesso <FiArrowRight />
+                Começar agora <FiArrowRight />
               </motion.a>
               <motion.a
                 href="#demo"
@@ -220,7 +221,7 @@ const Hero = () => {
               }}
             >
               <Image
-                src="/images/ai-network.jpg"
+                src="/images/inside-hero.png"
                 alt="Inside AI Platform"
                 width={600}
                 height={400}

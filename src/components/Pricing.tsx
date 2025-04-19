@@ -5,52 +5,32 @@ import { FiCheck, FiArrowRight } from "react-icons/fi";
 
 const plans = [
   {
-    name: "Básico",
-    price: "R$ 49",
+    name: "Free",
+    price: "R$ 0",
     period: "/mês",
-    description: "Ideal para pequenas empresas e startups",
+    description: "Perfeito para experimentar a plataforma",
     features: [
-      "Upload de até 100 páginas",
-      "1GB de armazenamento",
-      "100 consultas por mês",
+      "25 respostas da IA",
+      "1 documento na base",
       "Chat web personalizado",
-      "Suporte por email",
+      "Suporte via email",
     ],
-    cta: "Comece Gratuitamente",
+    cta: "Comece Agora",
     popular: false,
   },
   {
-    name: "Profissional",
+    name: "Inside+",
     price: "R$ 99",
     period: "/mês",
     description: "Perfeito para empresas em crescimento",
     features: [
-      "Upload de até 1.000 páginas",
+      "Upload de ilimitado de páginas",
       "10GB de armazenamento",
-      "Consultas ilimitadas",
-      "Chat web + WhatsApp",
-      "Múltiplos chatbots",
+      "Chat com mensagens ilimitadas",
       "Suporte prioritário",
     ],
     cta: "Solicitar acesso",
     popular: true,
-  },
-  {
-    name: "Empresarial",
-    price: "R$ 249",
-    period: "/mês",
-    description: "Para grandes empresas com alto volume",
-    features: [
-      "Upload ilimitado de páginas",
-      "100GB de armazenamento",
-      "Consultas ilimitadas",
-      "Chat web + WhatsApp",
-      "Chatbots ilimitados",
-      "API personalizada",
-      "Treinamento dedicado",
-    ],
-    cta: "Solicitar acesso",
-    popular: false,
   },
 ];
 
@@ -164,6 +144,22 @@ const PricingCard = ({
           </span>
           <span className="text-muted ml-2 text-sm">{plan.period}</span>
         </div>
+        {plan.name === "Inside+" && (
+          <div className="mt-2">
+            <span
+              className="text-xl font-bold"
+              style={{
+                background: "linear-gradient(to right, #f8f9fa, #7c3aed)",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                color: "transparent",
+                textShadow: "0 0 20px rgba(124, 58, 237, 0.3)",
+              }}
+            >
+              7 dias grátis
+            </span>
+          </div>
+        )}
       </div>
 
       {/* Lista de recursos */}
@@ -218,7 +214,7 @@ const PricingCard = ({
 
       {/* Botão de ação */}
       <a
-        href="#contact"
+        href="https://inside-ai.com.br/login"
         className={`block text-center py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 ${
           plan.popular
             ? "bg-primary hover:bg-primary-light text-white"
@@ -234,7 +230,7 @@ const PricingCard = ({
           textDecoration: "none",
         }}
       >
-        <span className="relative z-10">{plan.cta}</span>
+        <span className="relative z-10">Começar agora</span>
         <FiArrowRight size={18} />
       </a>
 
@@ -260,11 +256,11 @@ const Pricing = () => {
   return (
     <section
       id="pricing"
-      className="section"
+      className="section min-h-screen flex flex-col justify-center"
       style={{ backgroundColor: "#0f1117" }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -281,14 +277,14 @@ const Pricing = () => {
             viewport={{ once: true }}
             className="text-lg text-muted max-w-2xl mx-auto"
           >
-            Escolha o plano ideal para sua empresa e comece a automatizar seu
-            atendimento com chatbots inteligentes.
+            Escolha o plano ideal para sua empresa e acelera a busca por
+            informações com IA.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto relative z-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {plans.map((plan, index) => (
-            <div key={index} className="w-full">
+            <div key={index} className="w-full flex items-stretch">
               <PricingCard plan={plan} index={index} />
             </div>
           ))}

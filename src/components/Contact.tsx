@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiUser, FiCheckCircle, FiLoader } from "react-icons/fi";
 import Image from "next/image";
+import Link from "next/link";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -97,10 +98,10 @@ const Contact = () => {
 
               <div className="w-full relative">
                 <h2 className="text-2xl font-bold mb-2 bg-gradient-to-r from-white to-white/80 text-transparent bg-clip-text">
-                  Solicite seu acesso
+                  Solicite contato
                 </h2>
                 <p className="text-muted mb-8 text-sm">
-                  Preencha seus dados para começar a usar nossos serviços
+                  Preencha seus dados que entraremos em contato
                 </p>
 
                 <form className="contact-form" onSubmit={handleSubmit}>
@@ -144,6 +145,9 @@ const Contact = () => {
                     type="submit"
                     disabled={isLoading}
                     className={isLoading ? "opacity-70 cursor-not-allowed" : ""}
+                    onClick={() =>
+                      (window.location.href = "https://inside-ai.com.br/login")
+                    }
                   >
                     {isLoading ? (
                       <>
@@ -155,22 +159,19 @@ const Contact = () => {
                       </>
                     ) : (
                       <>
-                        Solicitar Acesso
-                        <FiUser size={20} className="opacity-70" />
+                        Solicitar contato
                       </>
                     )}
                   </button>
                 </form>
 
                 <p className="text-center mt-6">
-                  <a
-                    href="https://inside-ai.vercel.app/login"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary-light hover:text-primary-light/90 transition-colors text-sm"
+                  <Link
+                    href="https://inside-ai.com.br/login"
+                    className="text-primary hover:text-primary-light transition-colors duration-200"
                   >
                     Já tenho uma conta
-                  </a>
+                  </Link>
                 </p>
               </div>
             </motion.div>

@@ -54,6 +54,7 @@ const features = [
     title: "Integração com WhatsApp",
     description:
       "Conecte seu chatbot ao WhatsApp para atendimento automatizado 24/7 aos seus clientes.",
+    comingSoon: true,
   },
   {
     icon: <FiActivity size={24} />,
@@ -87,8 +88,28 @@ const FeatureCard = ({
       style={{
         background: cardGradients[index],
         marginBottom: "2.5rem",
+        position: "relative",
       }}
     >
+      {feature.comingSoon && (
+        <div
+          style={{
+            position: "absolute",
+            top: "1rem",
+            right: "1rem",
+            background: "linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%)",
+            padding: "0.25rem 0.75rem",
+            borderRadius: "9999px",
+            fontSize: "0.75rem",
+            color: "white",
+            fontWeight: "500",
+            boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+          }}
+        >
+          Em breve
+        </div>
+      )}
+
       {/* Efeito de brilho no canto superior direito */}
       <div
         style={{

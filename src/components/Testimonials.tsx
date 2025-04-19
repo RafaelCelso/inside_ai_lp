@@ -10,7 +10,7 @@ const testimonials = [
     role: "Gerente de Atendimento, TechSupport",
     image: "/images/Ana Silva.png",
     content:
-      "O Inside AI revolucionou nosso atendimento ao cliente. Nosso chatbot responde dúvidas 24/7 consultando nossa base de conhecimento, reduzindo em 70% o tempo de resposta e melhorando a satisfação dos clientes.",
+      "O Inside AI revolucionou nosso negócio, reduzindo em 70% o tempo de busca por informações e melhorando a satisfação dos clientes.",
     stars: 5,
   },
   {
@@ -18,7 +18,7 @@ const testimonials = [
     role: "Diretor de RH, EduTech",
     image: "/images/Carlos Mendes.png",
     content:
-      "Centralizamos todos os documentos da empresa na plataforma. Agora, nossa equipe tem acesso rápido a políticas, procedimentos e treinamentos através do chat. A integração com WhatsApp facilitou muito a comunicação interna.",
+      "Centralizamos todos os documentos da empresa na plataforma. Agora, nossa equipe tem acesso rápido a políticas, procedimentos e treinamentos através do chat. Estamos muito felizes com o resultado.",
     stars: 5,
   },
   {
@@ -137,7 +137,7 @@ const Testimonials = () => {
             className="text-lg text-muted max-w-2xl mx-auto"
           >
             Descubra como empresas estão usando nossa plataforma para
-            centralizar conhecimento e automatizar atendimento com IA.
+            centralizar conhecimento e acelerar a busca por informações com IA.
           </motion.p>
         </div>
 
