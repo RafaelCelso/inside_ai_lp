@@ -1,8 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const Demo = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Verificar inicialmente
+    checkMobile();
+
+    // Adicionar listener para mudanças de tamanho
+    window.addEventListener("resize", checkMobile);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <section
       id="demo"
@@ -82,6 +100,7 @@ const Demo = () => {
                 loop
                 muted
                 playsInline
+                key={isMobile ? "mobile" : "desktop"} // Força o recarregamento quando muda
                 style={{
                   position: "absolute",
                   top: 0,
@@ -93,17 +112,13 @@ const Demo = () => {
                   borderRadius: "8px",
                 }}
               >
-                {/* Vídeo para desktop */}
                 <source
-                  src="/media/Inside AI - Vídeo De Uso.webm"
+                  src={
+                    isMobile
+                      ? "/media/Inside Ai - Vídeo De Uso Mobile.webm"
+                      : "/media/Inside AI - Vídeo De Uso.webm"
+                  }
                   type="video/webm"
-                  media="(min-width: 768px)"
-                />
-                {/* Vídeo para mobile */}
-                <source
-                  src="/media/Inside Ai - Vídeo De Uso Mobile.webm"
-                  type="video/webm"
-                  media="(max-width: 767px)"
                 />
                 Seu navegador não suporta o elemento de vídeo.
               </video>
