@@ -32,6 +32,21 @@ const plans = [
     cta: "Solicitar acesso",
     popular: true,
   },
+  {
+    name: "Inside+ Anual",
+    price: "R$ 891",
+    period: "/ano",
+    description: "Melhor custo-benefício com ",
+    features: [
+      "Upload de ilimitado de páginas",
+      "10GB de armazenamento",
+      "Chat com mensagens ilimitadas",
+      "Suporte prioritário",
+      "Preço fixo garantido",
+    ],
+    cta: "Assinar Plano Anual",
+    popular: false,
+  },
 ];
 
 const PricingCard = ({
@@ -115,7 +130,28 @@ const PricingCard = ({
       <div className="mb-6">
         <h3 className="text-2xl font-bold mb-3 text-foreground">{plan.name}</h3>
         <div className="flex flex-col gap-1 py-4">
-          <p className="text-base text-muted-foreground">{plan.description}</p>
+          {plan.name === "Inside+ Anual" ? (
+            <p className="text-base text-muted-foreground">
+              Melhor custo-benefício com{" "}
+              <span
+                style={{
+                  background: "linear-gradient(to right, #7c3aed, #3b82f6)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  color: "transparent",
+                  fontWeight: "bold",
+                  padding: "0 4px",
+                  textShadow: "0 0 20px rgba(124, 58, 237, 0.3)",
+                }}
+              >
+                25% de desconto
+              </span>
+            </p>
+          ) : (
+            <p className="text-base text-muted-foreground">
+              {plan.description}
+            </p>
+          )}
         </div>
       </div>
 
